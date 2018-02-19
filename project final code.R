@@ -1,3 +1,24 @@
+# Border Patrol Apprehensions Project 
+
+# Group Members: Maria Ren, Yuehan Xiao, Xu Xu
+
+# A short Summary of the Background
+
+# Apprehension statistics record the number of foreigners who are caught while 
+# illegally entering the United States. These people are charged with violation of 
+# the Immigration and Nationality Act, and are subject to removal by the US Border Patrol.
+# According to CNN politics, US Border Patrol reported a historic low of apprehensions under 
+# the Trump administration. 
+# Our project uses the 2010 and 2017 Illegal Alien Apprehension statistical report and the 
+# Border Patrol Monthly Summary dataset to prove the decreasing number of apprehension across 
+# 9 main sectors of the US. With simple statistical tests and data analytic methods in R, 
+# our graphical analysis also shows the decreasing trend in apprehensions from 2000 to 2017. 
+
+
+# Citations 
+# Kopan, Tal. “US-Mexico Border Apprehensions Hit 17-Year Lows.” CNN, Cable News Network, 
+# 9 May 2017, www.cnn.com/2017/05/09/politics/border-crossings-apprehensions-down-trump/index.html.
+
 
 A2010<- read.csv('PB Apprehensions 2010.csv', header=TRUE, stringsAsFactors = FALSE)
 A2017<- read.csv('PB Apprehensions 2017.csv', header=TRUE, stringsAsFactors = FALSE)
@@ -29,13 +50,14 @@ A2017_RGV <- as.vector(A2017[6,],mode='numeric')
 intake.A2010_sector <- A2010_tucson
 intake.A2017_sector <- A2017_RGV
 t.test(intake.A2010_sector, intake.A2017_sector)
-#Since the p-value is 0.06346 which is greater than 0.05, so we fail to reject null hypothesis. It indiates 
-#that there are no significant difference in the mean apprehensions of 2010 Tucson and 2017 Rio Grand Valley. 
+#Since the p-value is 0.06346 which is greater than 0.05, so we fail to reject null hypothesis. 
+#It indiates that there are no significant difference in the mean apprehensions of 2010 Tucson and 
+#2017 Rio Grand Valley. 
 #So there is no change in the sector'smaximum. 
 
-#Through bar plots, we observed the 3 month periods with the most apprehsions in 2010 is March, April and May
-#And the 3 month periods with the most apprehensions in 2017 are October, Novermber and December. 
-#extract March, Aprial and May's apprehensions from 2010
+#Through bar plots, we observed the 3 month periods with the most apprehsions in 2010 is March, 
+# April and May And the 3 month periods with the most apprehensions in 2017 are October, 
+# Novermber and December. extract March, Aprial and May's apprehensions from 2010.
 A2010_3 <- as.vector(A2010[,6], mode='numeric' )
 A2010_4 <- as.vector(A2010[,7], mode='numeric' )
 A2010_5 <- as.vector(A2010[,8], mode='numeric' )
@@ -52,9 +74,10 @@ A2017_101112 <- as.vector(cbind(A2017_10,A2017_11,A2017_12))
 intake.A2010_month <- A2010_345
 intake.A2017_month <- A2017_101112
 t.test(intake.A2010_month, intake.A2017_month)
-#Since the p-value is 0.2075 which is greater than 0.05, so we fail to reject null hypothesis. It indiates 
-#that there are no significant difference in the mean apprehensions of 2010 March, April and May,  and 2017 October, Novermber and December
-#So there is no change in the month's maximum. 
+#Since the p-value is 0.2075 which is greater than 0.05, so we fail to reject null hypothesis. 
+#It indiates that there are no significant difference in the mean apprehensions of 2010 March, 
+# April and May,  and 2017 October, Novermber and December. So there is no change in the month's 
+# maximum. 
 
 #2010 Monthly Bar plot
 barplot(as.matrix(A2010), names.arg = colnames(A2010), 
@@ -87,5 +110,6 @@ namebank <- as.character(c(2000:2017))
 #label the years and lines on the averaged position
 text(c(2000:2017), ts12, namebank,cex=0.9)
 text(c(2000:2017), ts12, labels="----", cex=0.9,pos=2, col="red" )
-#From the time series plot, we can see that the average monthly BP Apprehensions decreases across the years between 2000 and 2017.
+#From the time series plot, we can see that the average monthly BP Apprehensions decreases 
+# across the years between 2000 and 2017.
 
