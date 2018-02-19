@@ -16,9 +16,6 @@ A short Summary of the Background
 Apprehension statistics record the number of foreigners who are caught while illegally entering the United States. These people are charged with violation of the Immigration and Nationality Act, and are subject to removal by the US Border Patrol. According to CNN politics, US Border Patrol reported a historic low of apprehensions under the Trump administration. Our project uses the 2010 and 2017 Illegal Alien Apprehension statistical report and the Border Patrol Monthly Summary dataset to prove the decreasing number of apprehension across 9 main sectors of the US. With simple statistical tests and data analytic methods in R, our graphical analysis also shows the decreasing trend in apprehensions from 2000 to 2017. 
 
 
-Citations 
-
-Kopan, Tal. “US-Mexico Border Apprehensions Hit 17-Year Lows.” CNN, Cable News Network, 9 May 2017, www.cnn.com/2017/05/09/politics/border-crossings-apprehensions-down-trump/index.html.
 
 
 ```{r}
@@ -184,3 +181,9 @@ text(c(2000:2017), ts12, labels="----", cex=0.9,pos=2, col="red" )
 
 ```
 From the time series plot, we can see that the average monthly BP Apprehensions decreases across the years between 2000 and 2017.
+
+
+Citations 
+
+Kopan, Tal. “US-Mexico Border Apprehensions Hit 17-Year Lows.” CNN, Cable News Network, 9 May 2017, www.cnn.com/2017/05/09/politics/border-crossings-apprehensions-down-trump/index.html.
+
