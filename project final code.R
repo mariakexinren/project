@@ -85,12 +85,16 @@ barplot(as.matrix(A2010), names.arg = colnames(A2010),
         axisnames=TRUE,
         main="2010 Border Patrol Apprehensions by Sector",
         border="light blue",
+        ylab="Apprehensions",
+        xlab="Year",
         col="light blue")
 #2017 Monthly Bar plot. 
 barplot(as.matrix(A2017), names.arg = colnames(A2017), 
         las=2,
         axisnames=TRUE,
         main="2017 Border Patrol Apprehensions by Sector",
+        ylab="Apprehensions",
+        xlab="Year",
         border="pink",
         col="pink")
 
