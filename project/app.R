@@ -45,9 +45,9 @@ ui <- fluidPage(
 server <- function(input, output) {
   
   output$plot <- renderPlot({
-     plot(ts(rev(as.vector(t(Monthly[,-1]))), start= c(2000,1), frequency=12), 
-                gpars=list(xlab="year", ylab="Apprehensions", lty=c(1:3)),
-                col='purple')
+    ts8 <- as.vector(t(Monthly[,-1]))
+    ts9 <- ts(rev(ts8), start= c(2000,1), frequency=12)
+    ts10 <- ts.plot(ts9, gpars=list(xlab="year", ylab="Apprehensions", lty=c(1:3)),col='purple')
     #let the Monthly data turns into a matrix
       ts11 <-as.matrix(Monthly)
     #the function to calculate the average of each year's apprehensions
@@ -64,6 +64,8 @@ server <- function(input, output) {
                  las=2,
                  axisnames=TRUE,
                  main="2010 Border Patrol Apprehensions by Sector",
+                 ylab="Apprehensions",
+                 xlab="Year",
                  border="light blue",
                  col="light blue")
       
@@ -74,6 +76,8 @@ server <- function(input, output) {
             las=2,
             axisnames=TRUE,
             main="2017 Border Patrol Apprehensions by Sector",
+            ylab="Apprehensions",
+            xlab="Year",
             border="pink",
             col="pink")
     
