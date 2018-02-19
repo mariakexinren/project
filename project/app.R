@@ -80,8 +80,19 @@ server <- function(input, output) {
   })
   # Generate a summary of the data ----
   output$summary <- renderPrint({
-      paste('Apprehension statistics record the number of foreigners who are caught while illegally entering the United States. These people are charged with violation of the Immigration and Nationality Act, and are subject to removal by the US Border Patrol. According to CNN politics, US Border Patrol reported a historic low of apprehensions under the Trump administration. Our project uses the 2010 and 2017 Illegal Alien Apprehension statistical report and the Border Patrol Monthly Summary dataset to prove the decreasing number of apprehension across 9 main sectors of the US. With simple statistical tests and data analytic methods in R, our graphical analysis also shows the decreasing trend in apprehensions from 2000 to 2017.')
-       })
+    HTML(
+      '      Apprehension statistics record the number of foreigners who are caught while 
+      illegally entering the United States. These people are charged with violation of the 
+      Immigration and Nationality Act, and are subject to removal by the US Border Patrol. 
+      According to CNN politics, US Border Patrol reported a historic low of apprehensions under
+      the Trump administration. 
+      Our project uses the 2010 and 2017 Illegal Alien Apprehension statistical report and the 
+      Border Patrol Monthly Summary dataset to prove the decreasing number of apprehension across
+      9 main sectors of the US. With simple statistical tests and data analytic methods in R, 
+      our graphical analysis also shows the decreasing trend in apprehensions from 2000 to 2017.'
+    
+         )
+      })
 
   # Generate a citation of the data ----
   output$Citation <- renderPrint({
