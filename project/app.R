@@ -20,7 +20,7 @@ Monthly<- read.csv('PB monthly summaries.csv',header=TRUE, stringsAsFactors = FA
 ui <- fluidPage(
   
   # Application title
-  titlePanel(" Border Patrol Apprehensions Monthly Summaries Time Series"),
+  titlePanel(" Border Patrol Apprehensions "),
   
 
   
