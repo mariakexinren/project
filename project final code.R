@@ -55,13 +55,7 @@ t.test(intake.A2010_month, intake.A2017_month)
 #Since the p-value is 0.2075 which is greater than 0.05, so we fail to reject null hypothesis. It indiates 
 #that there are no significant difference in the mean apprehensions of 2010 March, April and May,  and 2017 October, Novermber and December
 #So there is no change in the month's maximum. 
-#2010 sectors' Bar plot
-barplot(as.matrix(A2010[,]), names.arg = rownames(A2010), 
-        las=2,
-        axisnames=TRUE,
-        main="2010 Border Patrol Apprehensions by Sector",
-        border="blue",
-        col="yellow")
+
 #2010 Monthly Bar plot
 barplot(as.matrix(A2010), names.arg = colnames(A2010), 
         las=2,
