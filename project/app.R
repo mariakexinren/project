@@ -10,10 +10,9 @@
 library(shiny)
 library(dplyr)
 
-A2010<-source('PB Apprehensions 2010.csv')
-A2017<- source('PB Apprehensions 2017.csv')
-Monthly<- source('PB monthly summaries.csv')
-
+A2010<- read.csv('PB Apprehensions 2010.csv', header=TRUE, stringsAsFactors = FALSE)
+A2017<- read.csv('PB Apprehensions 2017.csv', header=TRUE, stringsAsFactors = FALSE)
+Monthly<- read.csv('PB monthly summaries.csv',header=TRUE, stringsAsFactors = FALSE)
 
 
 
