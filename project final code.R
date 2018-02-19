@@ -1,5 +1,5 @@
 
-A2010<- read.csv('BP Apprehensions 2010.csv', header=TRUE, stringsAsFactors = FALSE)
+A2010<- read.csv('PB Apprehensions 2010.csv', header=TRUE, stringsAsFactors = FALSE)
 A2017<- read.csv('PB Apprehensions 2017.csv', header=TRUE, stringsAsFactors = FALSE)
 Monthly<- read.csv('PB monthly summaries.csv',header=TRUE, stringsAsFactors = FALSE)
 
@@ -79,13 +79,19 @@ barplot(as.matrix(A2017), names.arg = colnames(A2017),
 
 
 #Time series plot
-row.names(Monthly) <- Monthly[,1]
 
+row.names(Monthly) <- Monthly[,1]
+Monthly<-Monthly[,2:13]
 ts8 <- as.vector(t(Monthly[,-1]))
 ts9 <- ts(rev(ts8), start= c(2000,1), frequency=12)
 ts10 <- ts.plot(ts9, gpars=list(xlab="year", ylab="Apprehensions", lty=c(1:3)),col='purple')
-
+#let the Monthly data turns into a matrix
+ts11 <-as.matrix(Monthly)
+#the function to calculate the average of each year's apprehensions
+ts12 <- rev(sapply(1:18, function(i) sum(ts11[i,])/12))
 namebank <- as.character(c(2000:2017))
-text(c(2000:2017),y=mean(ts9), namebank,cex=1)
-text(c(2000:2017), y=mean(ts9), labels="----", cex=0.7, col="red" )
+#label the years and lines on the averaged position
+text(c(2000:2017), ts12, namebank,cex=0.9)
+text(c(2000:2017), ts12, labels="----", cex=0.9,pos=2, col="red" )
 #From the time series plot, we can see that the average monthly BP Apprehensions decreases across the years between 2000 and 2017.
+
