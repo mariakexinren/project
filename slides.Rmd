@@ -5,9 +5,42 @@ date: "2/19/2018"
 output: ioslides_presentation
 ---
 
+<style type="text/css">
+
+body{ /* Normal  */
+      font-size: 12px;
+  }
+td {  /* Table  */
+  font-size: 8px;
+}
+h1.title {
+  font-size: 38px;
+  color: DarkRed;
+}
+h1 { /* Header 1 */
+  font-size: 36px;
+  color: Brown;
+}
+h2 { /* Header 2 */
+    font-size: 36px;
+  color: Brown;
+}
+h3 { /* Header 3 */
+  font-size: 36px;
+  font-family: "Times New Roman", Times, serif;
+  color: Browne;
+}
+code.r{ /* Code block */
+    font-size: 12px;
+}
+pre { /* Code block - determines code spacing between lines */
+    font-size: 14px;
+}
+</style>
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
+
 ##Summary
   Apprehension statistics record the number of foreigners who are caught while 
 illegally entering the United States. These people are charged with violation of 
