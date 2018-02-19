@@ -112,8 +112,8 @@ ts11 <-as.matrix(Monthly)
 ts12 <- rev(sapply(1:18, function(i) sum(ts11[i,])/12))
 namebank <- as.character(c(2000:2017))
 #label the years and lines on the averaged position
-text(c(2000:2017), ts12, namebank,cex=0.9)
-text(c(2000:2017), ts12, labels="----", cex=0.9,pos=2, col="red" )
+text(c(2000:2017)+1, ts12, namebank,cex=0.9)
+text(c(2000:2017)+1, ts12, labels="----", cex=0.9,pos=2, col="red" )
 #From the time series plot, we can see that the average monthly BP Apprehensions decreases 
 # across the years between 2000 and 2017.
 
